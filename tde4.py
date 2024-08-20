@@ -9,8 +9,6 @@ eh importante a gente ter como esconder a escolha da primeira pessoa. acho que d
 escolha1 = int(input('escolha))
 print(\n*10)
 '''
-
-
 import random
 print('Você deseja jogar no modo humano x humano(1)')
 print('Humano x computador(2)')
@@ -72,18 +70,15 @@ def hxm():
             break
 
 
-
-
 def modo():
     escolha_modo = int(input('Escolha o modo: '))
     if escolha_modo == 1:
         hxh()
     elif escolha_modo == 2:
         hxm() 
-    
     else:
         print('Escolha inválida. Tente novamente')
         return modo()  
 modo()
-modo()
+    
     
