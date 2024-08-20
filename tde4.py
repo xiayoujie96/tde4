@@ -11,15 +11,10 @@ print(\n*10)
 '''
 
 
-print('Você deseja jogar no modo humano x humano(1)')
-print('Humano x computador(2)')
-print('Computador x computador(3)')
-escolha_modo = int(input('Escolha o modo: '))
 import random
 print('Você deseja jogar no modo humano x humano(1)')
 print('Humano x computador(2)')
 print('Computador x computador(3)')
-escolha_modo = int(input('Escolha o modo: '))
 def hxh():
     print('Suas escolhas são: ')
     print('Pedra(1)')
@@ -27,8 +22,14 @@ def hxh():
     print('Tesoura(3)')
     while True:
         jogador1 = int(input('Insira sua escolha, jogador 1: '))
+        if jogador1 not in range(1, 4): 
+            print('Você escolheu uma opção inválida. Tente de novo')
+            continue
         print('\n'*10)
         jogador2 = int(input('Insira sua escolha, jogador 2: '))
+        if jogador2 not in range(1, 4): 
+            print('Você escolheu uma opção inválida. Tente de novo')
+            continue
         if jogador1 == jogador2:
             print('Vocês empataram')
         elif jogador1 == 1 and jogador2 == 2:
@@ -50,6 +51,9 @@ def hxm():
     print('Tesoura(3)')
     while True:
         jogador1 = int(input('Insira sua escolha, jogador 1: '))
+        if jogador1 not in range(1, 4): 
+            print('Você escolheu uma opção inválida. Tente de novo')
+            continue
         jogador2 = random.randint(1, 3)
         print(f'O jogador 2 escolheu o numero: {jogador2}')
         if jogador1 == jogador2:
@@ -67,10 +71,19 @@ def hxm():
             print('O jogo foi encerrado')
             break
 
+
+
+
 def modo():
+    escolha_modo = int(input('Escolha o modo: '))
     if escolha_modo == 1:
         hxh()
     elif escolha_modo == 2:
-        hxm()
+        hxm() 
+    
+    else:
+        print('Escolha inválida. Tente novamente')
+        return modo()  
+modo()
 modo()
     
