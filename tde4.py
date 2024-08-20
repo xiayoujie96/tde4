@@ -15,6 +15,11 @@ print('Você deseja jogar no modo humano x humano(1)')
 print('Humano x computador(2)')
 print('Computador x computador(3)')
 escolha_modo = int(input('Escolha o modo: '))
+import random
+print('Você deseja jogar no modo humano x humano(1)')
+print('Humano x computador(2)')
+print('Computador x computador(3)')
+escolha_modo = int(input('Escolha o modo: '))
 def hxh():
     print('Suas escolhas são: ')
     print('Pedra(1)')
@@ -38,9 +43,34 @@ def hxh():
         if parar == '4':
             print('O jogo foi encerrado')
             break
+def hxm(): 
+    print('Suas escolhas são: ')
+    print('Pedra(1)')
+    print('Papel(2)')
+    print('Tesoura(3)')
+    while True:
+        jogador1 = int(input('Insira sua escolha, jogador 1: '))
+        jogador2 = random.randint(1, 3)
+        print(f'O jogador 2 escolheu o numero: {jogador2}')
+        if jogador1 == jogador2:
+            print('Vocês empataram')
+        elif jogador1 == 1 and jogador2 == 2:
+            print('O jogador 2 ganhou')
+        elif jogador1 == 2 and jogador2 ==3:
+            print('O jogador 2 ganhou')
+        elif jogador1 == 3 and jogador2 == 1:
+            print('O jogador 2 ganhou ')
+        else: 
+            print('O jogador 1 ganhou')
+        parar = input('Para parar o jogo, digite (4): ')
+        if parar == '4':
+            print('O jogo foi encerrado')
+            break
 
 def modo():
     if escolha_modo == 1:
         hxh()
+    elif escolha_modo == 2:
+        hxm()
 modo()
     
