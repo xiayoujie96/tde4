@@ -10,6 +10,7 @@ escolha1 = int(input('escolha))
 print(\n*10)
 '''
 
+
 print('Você deseja jogar no modo humano x humano(1)')
 print('Humano x computador(2)')
 print('Computador x computador(3)')
@@ -23,15 +24,21 @@ def hxh():
         jogador1 = int(input('Insira sua escolha, jogador 1: '))
         print('\n'*10)
         jogador2 = int(input('Insira sua escolha, jogador 2: '))
-        break
-    if jogador1 == jogador2:
-        print('Vocês empataram')
-    elif jogador1 == 1 and jogador2 == 2:
-        print('O jogador 2 ganhou')
-    elif jogador1 == 2 and jogador2 ==3:
-        print('O jogador 2 ganhou')
-    elif jogador1 == 3 and jogador2 == 1:
-        print('O jogador 2 ganhou ')
+        if jogador1 == jogador2:
+            print('Vocês empataram')
+        elif jogador1 == 1 and jogador2 == 2:
+            print('O jogador 2 ganhou')
+        elif jogador1 == 2 and jogador2 ==3:
+            print('O jogador 2 ganhou')
+        elif jogador1 == 3 and jogador2 == 1:
+            print('O jogador 2 ganhou ')
+        else: 
+            print('O jogador 1 ganhou')
+        parar = input('Para parar o jogo, digite (4): ')
+        if parar == '4':
+            print('O jogo foi encerrado')
+            break
+
 def modo():
     if escolha_modo == 1:
         hxh()
