@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-print('Você pode usar o algoritmo para encontrar X (1) ou Y (2). Deseja encontrar qual?')
 def funcX():
     while True:
         print('Insira o valor de A, B e Y')
@@ -36,7 +35,7 @@ def funcY():
         x = int(input('Valor de x: '))
         y = (a * x) + b
         print(f'O valor de Y é {y}')
-        return a, b, y
+        return a, b, x
 
 def modo():
     while True:
