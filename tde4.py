@@ -92,7 +92,6 @@ def hxm():
             print('O jogador 2 ganhou')
             total2 += 1
         parar = input('Deseja continuar? (S/N): ')
-        parar = input('Deseja continuar? (S/N): ')
         if parar.lower() == 'n':
             if total1 > total2:
                 print('O vencedor foi o jogador 1')
