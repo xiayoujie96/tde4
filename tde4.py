@@ -1,3 +1,14 @@
+
+'''
+settar o print pra explicar a brincadeira, e definir a escolha se vai ser hxh, hxm, mxm
+pra fazer o humano x maquina e maquina x maquina, da pra usar randint, que vai fazer eles escolherem um numero aleatorio de 1 a 3
+
+pro jogo ter infinitas rodadas, vamos ter que settar um função com while True: etc etc, e um elif input = 'parar': break, else: raise value error
+algo assim^
+eh importante a gente ter como esconder a escolha da primeira pessoa. acho que da pra fazer um
+escolha1 = int(input('escolha))
+print(\n*10)
+'''
 import random
 
 print("bem vindo, jogador\n\nmodos de jogo")
@@ -30,7 +41,7 @@ def hxh(total1, total2, totalempate):
         if parar(total1, total2, totalempate) == False:
             break
         
-def hxm(): 
+def hxm(total1, total2, totalempate): 
     while True:
         jogador1 = int(input('Insira sua escolha, jogador 1: '))
         if jogador1 not in range(1, 4): 
@@ -50,7 +61,7 @@ def hxm():
         if parar(total1, total2, totalempate) == False:
             break
 
-def cxc():
+def cxc(total1, total2, totalempate):
     while True:
         jogador1 = random.randint(1, 3)
         jogador2 = random.randint(1, 3)
