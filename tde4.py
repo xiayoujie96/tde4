@@ -72,7 +72,8 @@ def hxm():
         else: 
             print('O jogador 2 ganhou')
             total2 += 1
-        parar(total1, total2, totalempate)
+        if parar(total1, total2, totalempate) == False:
+            break
 
 def cxc():
     print('As escolhas são: ')
@@ -98,7 +99,8 @@ def cxc():
         else: 
             print('O jogador 2 ganhou')
             total2 += 1
-        parar(total1, total2, totalempate)
+        if parar(total1, total2, totalempate) == False:
+            break
         
 def parar(total1, total2, totalempate):
     while True:
@@ -117,8 +119,7 @@ def parar(total1, total2, totalempate):
         elif resposta == 's':
             return True
         else:
-            print('Opção inválida. Tente novamente')
-            
+            print('Opção inválida. Tente novamente')     
                                       
 def modo():
     escolha_modo = int(input('Escolha o modo: '))
