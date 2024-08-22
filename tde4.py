@@ -11,7 +11,6 @@ print(\n*10)
 '''
 import random
 
-
 print("bem vindo, jogador\n\nmodos de jogo")
 print('(1)humano x humano')
 print('(2)humano x computador')
@@ -45,7 +44,8 @@ def hxh():
         else: 
             print('O jogador 2 ganhou')
             total2 += 1
-        parar(total1, total2, totalempate)
+        if parar(total1, total2, totalempate) == False:
+            break
         
         
 def hxm(): 
@@ -113,11 +113,12 @@ def parar(total1, total2, totalempate):
             print(f'O placar de vitórias do jogador 1 é {total1}')
             print(f'O placar de vitórias do jogador 2 é {total2}')
             print(f'O total de empates é {totalempate}')
-            return True
-        elif resposta == 's':
             return False
+        elif resposta == 's':
+            return True
         else:
             print('Opção inválida. Tente novamente')
+            
                                       
 def modo():
     escolha_modo = int(input('Escolha o modo: '))
@@ -131,4 +132,3 @@ def modo():
         print('Escolha inválida. Tente novamente')
         return modo()  
 modo()
-
