@@ -15,16 +15,10 @@ print("bem vindo, jogador\n\nmodos de jogo")
 print('(1)humano x humano')
 print('(2)humano x computador')
 print('(3)Computador x computador')
-
-def hxh():
-    print('Suas escolhas são: ')
-    print('Pedra(1)')
-    print('Papel(2)')
-    print('Tesoura(3)')
-    total1 = 0
-    total2 = 0
-    totalempate = 0
-     
+total1 = 0
+total2 = 0
+totalempate = 0
+def hxh(total1, total2, totalempate):
     while True:
         jogador1 = int(input('Insira sua escolha, jogador 1: '))
         if jogador1 not in range(1, 4): 
@@ -47,15 +41,7 @@ def hxh():
         if parar(total1, total2, totalempate) == False:
             break
         
-        
 def hxm(): 
-    print('Suas escolhas são: ')
-    print('Pedra(1)')
-    print('Papel(2)')
-    print('Tesoura(3)')
-    total1 = 0
-    total2 = 0
-    totalempate = 0
     while True:
         jogador1 = int(input('Insira sua escolha, jogador 1: '))
         if jogador1 not in range(1, 4): 
@@ -76,15 +62,6 @@ def hxm():
             break
 
 def cxc():
-    print('As escolhas são: ')
-    print('Pedra(1)')
-    print('Papel(2)')
-    print('Tesoura(3)')
-
-    total1 = 0
-    total2 = 0
-    totalempate = 0
-
     while True:
         jogador1 = random.randint(1, 3)
         jogador2 = random.randint(1, 3)
@@ -123,12 +100,16 @@ def parar(total1, total2, totalempate):
                                       
 def modo():
     escolha_modo = int(input('Escolha o modo: '))
+    print('As escolhas são: ')
+    print('Pedra(1)')
+    print('Papel(2)')
+    print('Tesoura(3)')
     if escolha_modo == 1:
-        hxh()
+        hxh(total1, total2, totalempate)
     elif escolha_modo == 2:
-        hxm() 
-    elif escolha_modo ==3:
-        cxc()
+        hxm(total1, total2, totalempate) 
+    elif escolha_modo == 3:
+        cxc(total1, total2, totalempate)
     else:
         print('Escolha inválida. Tente novamente')
         return modo()  
