@@ -102,7 +102,7 @@ def cxc():
         
 def parar(total1, total2, totalempate):
     while True:
-        resposta = input('Deseja continuar? (S/N): ').strip().lower()
+        resposta = input('Deseja continuar? (S/N): ').lower()
         if resposta == 'n':
             if total1 > total2:
                 print('O vencedor foi o jogador 1')
