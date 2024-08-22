@@ -58,12 +58,15 @@ def hxh():
         elif parar.lower() == 's':
             continue
         else: 
-            print('Opção inválida. Comece novamente')
-            print(f'O placar de vitorias do jogador 1 é {total1}')
-            print(f'O placar de vitorias do jogador 2 é {total2}')
-            print(f'O total de empates é {totalempate}')
-            break
-
+            while parar.lower() != 's':
+                print('Opção inválida. Tente novamente')
+                parar = input('Deseja continuar? (S/N): ')
+                if parar.lower() == 'n':
+                    print('O jogo empatou')
+                    print(f'O placar de vitorias do jogador 1 é {total1}')
+                    print(f'O placar de vitorias do jogador 2 é {total2}')
+                    print(f'O total de empates é {totalempate}')
+                    break
 def hxm(): 
     print('Suas escolhas são: ')
     print('Pedra(1)')
@@ -104,11 +107,15 @@ def hxm():
         elif parar.lower() == 's':
             continue
         else: 
-            print('Opção inválida. Comece novamente')
-            print(f'O placar de vitorias do jogador 1 é {total1}')
-            print(f'O placar de vitorias do jogador 2 é {total2}')
-            print(f'O total de empates é {totalempate}')
-            break
+            while parar.lower() != 's':
+                print('Opção inválida. Tente novamente')
+                parar = input('Deseja continuar? (S/N): ')
+                if parar.lower() == 'n':
+                    print('O jogo empatou')
+                    print(f'O placar de vitorias do jogador 1 é {total1}')
+                    print(f'O placar de vitorias do jogador 2 é {total2}')
+                    print(f'O total de empates é {totalempate}')
+                    break
 def cxc():
     print('As escolhas são: ')
     print('Pedra(1)')
@@ -148,11 +155,17 @@ def cxc():
         elif parar.lower() == 's':
             continue
         else: 
-            print('Opção inválida. Comece novamente')
-            print(f'O placar de vitorias do jogador 1 é {total1}')
-            print(f'O placar de vitorias do jogador 2 é {total2}')
-            print(f'O total de empates é {totalempate}')
-            break
+            while parar.lower() != 's':
+                print('Opção inválida. Tente novamente')
+                parar = input('Deseja continuar? (S/N): ')
+                if parar.lower() == 'n':
+                    print('O jogo empatou')
+                    print(f'O placar de vitorias do jogador 1 é {total1}')
+                    print(f'O placar de vitorias do jogador 2 é {total2}')
+                    print(f'O total de empates é {totalempate}')
+                    break
+            
+
             
                 
 def modo():
