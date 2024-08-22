@@ -15,11 +15,15 @@ print("bem vindo, jogador\n\nmodos de jogo")
 print('(1)humano x humano')
 print('(2)humano x computador')
 print('(3)Computador x computador')
+
 def hxh():
     print('Suas escolhas são: ')
     print('Pedra(1)')
     print('Papel(2)')
     print('Tesoura(3)')
+    total1 = 0
+    total2 = 0
+    totalempate = 0
     while True:
         jogador1 = int(input('Insira sua escolha, jogador 1: '))
         if jogador1 not in range(1, 4): 
@@ -32,23 +36,42 @@ def hxh():
             continue
         if jogador1 == jogador2:
             print('Vocês empataram')
-        elif jogador1 == 1 and jogador2 == 2:
-            print('O jogador 2 ganhou')
-        elif jogador1 == 2 and jogador2 ==3:
-            print('O jogador 2 ganhou')
-        elif jogador1 == 3 and jogador2 == 1:
-            print('O jogador 2 ganhou ')
-        else: 
+            totalempate += 1
+        elif (jogador1 == 1 and jogador2 == 3) or (jogador1 == 2 and jogador2 == 1) or (jogador1 == 3 and jogador2 == 2):
             print('O jogador 1 ganhou')
-        parar = input('Para parar o jogo, digite (4): ')
-        if parar == '4':
-            print('O jogo foi encerrado')
+            total1 += 1
+        else: 
+            print('O jogador 2 ganhou')
+            total2 += 1
+        parar = input('Deseja continuar? (S/N): ')
+        if parar.lower() == 'n':
+            if total1 > total2:
+                print('O vencedor foi o jogador 1')
+            elif total2 > total1:
+                print('O vencedor foi o jogador 2')
+            else: 
+                print('O jogo empatou')
+            print(f'O placar de vitorias do jogador 1 é {total1}')
+            print(f'O placar de vitorias do jogador 2 é {total2}')
+            print(f'O total de empates é {totalempate}')
             break
+        elif parar.lower() == 's':
+            continue
+        else: 
+            print('Opção inválida. Comece novamente')
+            print(f'O placar de vitorias do jogador 1 é {total1}')
+            print(f'O placar de vitorias do jogador 2 é {total2}')
+            print(f'O total de empates é {totalempate}')
+            break
+
 def hxm(): 
     print('Suas escolhas são: ')
     print('Pedra(1)')
     print('Papel(2)')
     print('Tesoura(3)')
+    total1 = 0
+    total2 = 0
+    totalempate = 0
     while True:
         jogador1 = int(input('Insira sua escolha, jogador 1: '))
         if jogador1 not in range(1, 4): 
@@ -58,44 +81,80 @@ def hxm():
         print(f'O jogador 2 escolheu o numero: {jogador2}')
         if jogador1 == jogador2:
             print('Vocês empataram')
-        elif jogador1 == 1 and jogador2 == 2:
-            print('O jogador 2 ganhou')
-        elif jogador1 == 2 and jogador2 ==3:
-            print('O jogador 2 ganhou')
-        elif jogador1 == 3 and jogador2 == 1:
-            print('O jogador 2 ganhou ')
-        else: 
+            totalempate += 1
+        elif (jogador1 == 1 and jogador2 == 3) or (jogador1 == 2 and jogador2 == 1) or (jogador1 == 3 and jogador2 == 2):
             print('O jogador 1 ganhou')
-        parar = input('Para parar o jogo, digite (4): ')
-        if parar == '4':
-            print('O jogo foi encerrado')
+            total1 += 1
+        else: 
+            print('O jogador 2 ganhou')
+            total2 += 1
+        parar = input('Deseja continuar? (S/N): ')
+        parar = input('Deseja continuar? (S/N): ')
+        if parar.lower() == 'n':
+            if total1 > total2:
+                print('O vencedor foi o jogador 1')
+            elif total2 > total1:
+                print('O vencedor foi o jogador 2')
+            else: 
+                print('O jogo empatou')
+            print(f'O placar de vitorias do jogador 1 é {total1}')
+            print(f'O placar de vitorias do jogador 2 é {total2}')
+            print(f'O total de empates é {totalempate}')
+            break
+        elif parar.lower() == 's':
+            continue
+        else: 
+            print('Opção inválida. Comece novamente')
+            print(f'O placar de vitorias do jogador 1 é {total1}')
+            print(f'O placar de vitorias do jogador 2 é {total2}')
+            print(f'O total de empates é {totalempate}')
             break
 def cxc():
-    print('Suas escolhas são: ')
+    print('As escolhas são: ')
     print('Pedra(1)')
     print('Papel(2)')
     print('Tesoura(3)')
+
+    total1 = 0
+    total2 = 0
+    totalempate = 0
+
     while True:
-        computador1 = random.randint(1, 3)
-        computador2 = random.randint(1, 3)
-        print(f'O computador 1 escolheu o numero: {computador1}')
-        print(f'O computador 2 escolheu o numero: {computador2}')
-        if computador1 == computador2:
+        jogador1 = random.randint(1, 3)
+        jogador2 = random.randint(1, 3)
+        print(f'O jogador 1 escolheu o numero: {jogador1}')
+        print(f'O jogador 2 escolheu o numero: {jogador2}')
+        if jogador1 == jogador2:
             print('Vocês empataram')
-        elif computador1 == 1 and computador2 == 2:
-            print('O computador 2 ganhou')
-        elif computador1 == 2 and computador2 ==3:
-            print('O comutador 2 ganhou')
-        elif computador1 == 3 and computador2 == 1:
-            print('O comptador 2 ganhou ')
+            totalempate += 1
+        elif (jogador1 == 1 and jogador2 == 3) or (jogador1 == 2 and jogador2 == 1) or (jogador1 == 3 and jogador2 == 2):
+            print('O jogador 1 ganhou')
+            total1 += 1
         else: 
-            print('O computador 1 ganhou')
-        parar = input('Para parar o jogo, digite (4): ')
-        if parar == '4':
-            print('O jogo foi encerrado')
+            print('O jogador 2 ganhou')
+            total2 += 1
+        parar = input('Deseja continuar? (S/N): ')
+        if parar.lower() == 'n':
+            if total1 > total2:
+                print('O vencedor foi o jogador 1')
+            elif total2 > total1:
+                print('O vencedor foi o jogador 2')
+            else: 
+                print('O jogo empatou')
+            print(f'O placar de vitorias do jogador 1 é {total1}')
+            print(f'O placar de vitorias do jogador 2 é {total2}')
+            print(f'O total de empates é {totalempate}')
             break
-
-
+        elif parar.lower() == 's':
+            continue
+        else: 
+            print('Opção inválida. Comece novamente')
+            print(f'O placar de vitorias do jogador 1 é {total1}')
+            print(f'O placar de vitorias do jogador 2 é {total2}')
+            print(f'O total de empates é {totalempate}')
+            break
+            
+                
 def modo():
     escolha_modo = int(input('Escolha o modo: '))
     if escolha_modo == 1:
