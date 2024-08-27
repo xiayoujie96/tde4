@@ -66,21 +66,22 @@ def cxc(total1, total2, totalempate, nome1, nome2):
 def parar(total1, total2, totalempate, nome1, nome2):
     while True:
         resposta = input('Deseja continuar? (S/N): ').lower()
-        if resposta == 'n':
-            if total1 > total2:
-                print(f'O vencedor foi o {nome1}')
-            elif total2 > total1:
-                print(f'O vencedor foi o {nome2}')
-            else: 
-                print('O jogo empatou')
-            print(f'O placar de vitórias do {nome1} é {total1}')
-            print(f'O placar de vitórias do {nome2} é {total2}')
-            print(f'O total de empates é {totalempate}')
-            return False
-        elif resposta == 's':
-            return True
-        else:
-            print('Opção inválida. Tente novamente')     
+        match resposta: 
+            case 'n':
+                if total1 > total2:
+                    print(f'O vencedor foi o {nome1}')
+                elif total2 > total1:
+                    print(f'O vencedor foi o {nome2}')
+                else: 
+                    print('O jogo empatou')
+                print(f'O placar de vitórias do {nome1} é {total1}')
+                print(f'O placar de vitórias do {nome2} é {total2}')
+                print(f'O total de empates é {totalempate}')
+                return False
+            case 's':
+                return True
+            case _:
+                print('Opção inválida. Tente novamente')     
                                       
 def modo(nome1, nome2):
     escolha_modo = int(input('Escolha o modo: '))
@@ -88,20 +89,21 @@ def modo(nome1, nome2):
     print('Pedra(1)')
     print('Papel(2)')
     print('Tesoura(3)')
-    if escolha_modo == 1:
-        nome1 = input('Insira o seu nome, jogador 1 :').title()
-        nome2 = input('Insira o seu nome, jogador 2 :').title()
-        hxh(total1, total2, totalempate, nome1, nome2)
-    elif escolha_modo == 2:
-        nome1 = input('Insira o seu nome, jogador 1 :').title()
-        nome2 = 'Computador'
-        hxm(total1, total2, totalempate, nome1, nome2) 
-    elif escolha_modo == 3:
-        nome1 = 'Computador 1'
-        nome2 = 'Computador 2'
-        cxc(total1, total2, totalempate, nome1, nome2)
-    else:
-        print('Escolha inválida. Tente novamente')
-        return modo(nome1, nome2)  
+    match escolha_modo:
+        case 1:
+            nome1 = input('Insira o seu nome, jogador 1 :').title()
+            nome2 = input('Insira o seu nome, jogador 2 :').title()
+            hxh(total1, total2, totalempate, nome1, nome2)
+        case 2:
+            nome1 = input('Insira o seu nome, jogador 1 :').title()
+            nome2 = 'Computador'
+            hxm(total1, total2, totalempate, nome1, nome2) 
+        case 3:
+            nome1 = 'Computador 1'
+            nome2 = 'Computador 2'
+            cxc(total1, total2, totalempate, nome1, nome2)
+        case _:
+            print('Escolha inválida. Tente novamente')
+            return modo(nome1, nome2)  
     
 modo(nome1, nome2)
