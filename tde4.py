@@ -4,6 +4,7 @@ print("bem vindo, jogadores\n\nmodos de jogo")
 print('(1)humano x humano')                     #display inicial
 print('(2)humano x computador')
 print('(3)Computador x computador')
+
 total1 = 0              # aqui eu defino os valores dos totais pra 0, pra virarem uma variavel global e eu poder chamar elas nas funçõoes
 total2 = 0
 totalempate = 0
@@ -38,9 +39,8 @@ def hxh(total1, total2, totalempate, nome1, nome2):
         total1, total2, totalempate = escolhas(total1, total2, totalempate, nome1, nome2, jogador1, jogador2) # define os totais para o return do escolhas, ao mesmo tempo que chama a função escolhas()
         if parar(total1, total2, totalempate, nome1, nome2) == False:
             break
-        hxh(total1, total2, totalempate, nome1, nome2)
-    
 
+        
 def hxm(total1, total2, totalempate, nome1, nome2): 
     while True:
         jogador1 = int(input(f'Insira sua escolha, {nome1}: '))
@@ -51,17 +51,15 @@ def hxm(total1, total2, totalempate, nome1, nome2):
         total1, total2, totalempate = escolhas(total1, total2, totalempate, nome1, nome2, jogador1, jogador2)
         if parar(total1, total2, totalempate, nome1, nome2) == False:
             break
-        hxm(total1, total2, totalempate, nome1, nome2)
+
 
 def cxc(total1, total2, totalempate, nome1, nome2):
     while True:
         jogador1 = random.randint(1, 3)
         jogador2 = random.randint(1, 3)
-        escolhas(total1, total2, totalempate, nome1, nome2, jogador1, jogador2)
         total1, total2, totalempate = escolhas(total1, total2, totalempate, nome1, nome2, jogador1, jogador2)
         if parar(total1, total2, totalempate, nome1, nome2) == False:
             break
-        hxm(total1, total2, totalempate, nome1, nome2)
 
 def parar(total1, total2, totalempate, nome1, nome2):
     while True:
