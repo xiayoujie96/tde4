@@ -25,7 +25,7 @@ def escolhas(total1, total2, totalempate, nome1, nome2, jogador1, jogador2):  #d
         total2 += 1
     return total1, total2, totalempate # atualização de valores
 
-def hxh(total1, total2, totalempate, nome1, nome2):
+def hxh(total1, total2, totalempate, nome1, nome2):                 #função humano x humano
     while True:
         jogador1 = int(input(f'Insira sua escolha, {nome1}: '))
         if jogador1 not in range(1, 4): 
@@ -41,7 +41,7 @@ def hxh(total1, total2, totalempate, nome1, nome2):
             break
 
         
-def hxm(total1, total2, totalempate, nome1, nome2): 
+def hxm(total1, total2, totalempate, nome1, nome2):         #função humano x computador
     while True:
         jogador1 = int(input(f'Insira sua escolha, {nome1}: '))
         if jogador1 not in range(1, 4): 
@@ -53,7 +53,7 @@ def hxm(total1, total2, totalempate, nome1, nome2):
             break
 
 
-def cxc(total1, total2, totalempate, nome1, nome2):
+def cxc(total1, total2, totalempate, nome1, nome2):  #função computador x computador
     while True:
         jogador1 = random.randint(1, 3)
         jogador2 = random.randint(1, 3)
@@ -61,7 +61,7 @@ def cxc(total1, total2, totalempate, nome1, nome2):
         if parar(total1, total2, totalempate, nome1, nome2) == False:
             break
 
-def parar(total1, total2, totalempate, nome1, nome2):
+def parar(total1, total2, totalempate, nome1, nome2):          #função que pergunta ao usuario se deseja continuar
     while True:
         resposta = input('Deseja continuar? (S/N): ').lower()
         match resposta: 
@@ -81,7 +81,7 @@ def parar(total1, total2, totalempate, nome1, nome2):
             case _:
                 print('Opção inválida. Tente novamente')     
                                       
-def modo(nome1, nome2):
+def modo(nome1, nome2):                                          #função que controla o fluxo do jogo
     escolha_modo = int(input('Escolha o modo: '))
     print('As escolhas são: ')
     print('Pedra(1)')
